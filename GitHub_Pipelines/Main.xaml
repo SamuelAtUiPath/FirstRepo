@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1302,1213.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1469.3333333333333,1398</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -91,9 +91,10 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="450,1148.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="450,1333.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Lyrics" />
+      <Variable x:TypeArguments="x:Object" Name="_out_GetRobotAsset_1__Value" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -108,9 +109,10 @@
     </ui:AddQueueItem>
     <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="GitHub_Asset" CacheStrategy="None" DisplayName="Get Asset - GitHib Asset" FolderPath="United Stated/San Francisco" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
-        <OutArgument x:TypeArguments="x:String" />
+        <OutArgument x:TypeArguments="x:Object">[_out_GetRobotAsset_1__Value]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[_out_GetRobotAsset_1__Value]" />
     <ucas:UploadStorageFile FileResource="{x:Null}" TimeoutMS="{x:Null}" Destination="Lyrics.txt" DisplayName="Upload Storage File" FolderPath="United Stated/San Francisco" sap:VirtualizedContainerService.HintSize="388,246" sap2010:WorkflowViewState.IdRef="UploadStorageFile_1" Path="[Environment.CurrentDirectory + &quot;\Lyrics.txt&quot;]" StorageBucketName="GitHub_Bucket" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[IWillBeLoggedAtTheEnd]" />
   </Sequence>
